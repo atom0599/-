@@ -69,9 +69,9 @@ export default function Home() {
   const [owner, setOwner] = useState("");
   const [account, setAccount] = useState("");
 
-  useEffect(() => {
+useEffect(() => {
     const init = async () => {
-      if (typeof window.ethereum !== 'undefined') {
+      if (typeof (window as any).ethereum !== 'undefined') {
         setIsLoading(true);
         setMessage("지갑을 연결하고 컨트랙트 정보를 로드합니다...");
         try {
