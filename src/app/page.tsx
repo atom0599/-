@@ -40,7 +40,7 @@ const contractABI: any[] = [
       {
         "internalType": "uint256",
         "name": "",
-        "type": "uint256"
+        "type":D-Pad "uint256"
       }
     ],
     "stateMutability": "view",
@@ -69,14 +69,15 @@ export default function Home() {
   const [owner, setOwner] = useState("");
   const [account, setAccount] = useState("");
 
-useEffect(() => {
+  useEffect(() => {
     const init = async () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if (typeof (window as any).ethereum !== 'undefined') {
         setIsLoading(true);
         setMessage("지갑을 연결하고 컨트랙트 정보를 로드합니다...");
         try {
-          const provider = new ethers.BrowserProvider(window.ethereum);
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const provider = new ethers.BrowserProvider((window as any).ethereum);
           await provider.send("eth_requestAccounts", []);
           const signer = await provider.getSigner();
           
