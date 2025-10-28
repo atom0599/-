@@ -71,6 +71,7 @@ export default function Home() {
 
 useEffect(() => {
     const init = async () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if (typeof (window as any).ethereum !== 'undefined') {
         setIsLoading(true);
         setMessage("지갑을 연결하고 컨트랙트 정보를 로드합니다...");
