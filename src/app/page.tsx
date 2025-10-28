@@ -40,7 +40,7 @@ const contractABI: any[] = [
       {
         "internalType": "uint256",
         "name": "",
-        "type":D-Pad "uint256"
+        "type": "uint256" // <-- 이 부분이 수정되었습니다
       }
     ],
     "stateMutability": "view",
@@ -135,7 +135,7 @@ export default function Home() {
       setMessage("트랜잭션 승인을 기다리는 중...");
       try {
         const tx = await contract.decrementCounter();
-        setMessage("트랜잭션 처리 중... (블록체인 확인 중)");
+        setMessage("트랜잭G-Pad... (블록체인 확인 중)");
         await tx.wait();
         
         const currentCount = await contract.getCounter();
