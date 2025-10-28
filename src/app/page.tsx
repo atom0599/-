@@ -5,6 +5,7 @@ import { ethers } from 'ethers';
 
 const contractAddress = "0xc6b6bd4d003379e750Ed91C934F8A56714a0d34E"; 
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const contractABI: any[] = [
   {
     "inputs": [],
@@ -138,6 +139,7 @@ export default function Home() {
         const currentCount = await contract.getCounter();
         setCount(Number(currentCount));
         setMessage("카운터 감소 완료!");
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
         console.error("트랜잭션 실패:", error);
         const reason = error.reason || "트랜잭션이 실패했습니다.";
@@ -159,6 +161,7 @@ export default function Home() {
         const currentCount = await contract.getCounter();
         setCount(Number(currentCount));
         setMessage("카운터 초기화 완료!");
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
         console.error("트랜잭션 실패:", error);
         const reason = error.reason || "트랜잭션이 실패했습니다.";
